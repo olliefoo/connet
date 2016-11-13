@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -18,5 +19,6 @@
       <ToggleButton fx:id="p10" layoutX="39.0" layoutY="317.0" mnemonicParsing="false" text="pref10" />
       <ToggleButton fx:id="p11" layoutX="149.0" layoutY="317.0" mnemonicParsing="false" text="pref11" />
       <ToggleButton fx:id="p12" layoutX="277.0" layoutY="317.0" mnemonicParsing="false" text="pref12" />
+      <Button fx:id="okButton" layoutX="177.0" layoutY="430.0" mnemonicParsing="false" onAction="#submitPreferences" text="OK" />
    </children>
 </AnchorPane>

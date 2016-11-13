@@ -1,23 +1,28 @@
 package main;
 
 import java.io.Serializable;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * Created by cbbjs on 11/12/2016.
  */
 public class User implements Serializable{
         private String username;
         private String password;
-        private int currentConventionNum;
+        private int convention;
         private Profile profile;
         private String email;
+        private Set preferences;
 
-        public User(String username, String password, int currentConventionNum, String email) {
+        public User(String username, String password, String email) {
             this.username = username;
             this.password = password;
             profile = new Profile();
-            this.currentConventionNum = currentConventionNum;
+            this.convention = convention;
             this.email = email;
             profile.setEmail(email);
+            preferences = new TreeSet<>();
         }
 
         public String getUsername() {
@@ -30,16 +35,15 @@ public class User implements Serializable{
 
         public Profile getProfile() { return profile; }
 
-        public void setEmail(String s) {
-            email = s;
+        public Set getPreferences() {
+            return preferences;
         }
 
-        public boolean setPassword(String p) {
-            if (password.equals(p)) {
-                return false;
-            }
-            password = p;
-            return true;
+        public int getConvention() {
+            return convention;
         }
-    }
+
+        public String getEmail() {
+            return email;
+        }
 }
