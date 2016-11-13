@@ -9,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import main.User;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,16 +26,21 @@ public class ProfileController {
     @FXML
     private ImageView profilePic;
 
+    User user;
+
+    public void setUser(User u) {
+        user = u;
+    }
 
     @FXML
     private void handleConfirmPressed() throws IOException {
-        if (isInputValid()) {
+        //if (isInputValid()) {
             Stage stage = (Stage) confirmButton.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass()
                     .getResource("../view/MainAppScreen.fxml"));
             stage.setScene(new Scene(root));
             stage.show();
-        }
+        //}
     }
     @FXML
     private void handleCancelPressed() throws IOException {
@@ -55,6 +61,6 @@ public class ProfileController {
             System.out.println("File is not valid");
         }
         profilePic = new ImageView(new Image(getClass().getResourceAsStream(path), 200, 150, true ,true));
-
+        user.getProfile().setProfilePic(profilePic.getImage());
     }
 }
