@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -17,6 +18,11 @@ public class ProfileController {
     private Button confirmButton;
     @FXML
     private Button cancelButton;
+
+    @FXML
+    private ImageView profilePic;
+
+
     @FXML
     private void handleConfirmPressed() throws IOException {
         if (isInputValid()) {

@@ -56,7 +56,17 @@ public class Profile implements Serializable{
         gender = g;
     }
 
+
+    public void setProfilePic(Image image) {
+        profilePic = image;
+    }
+
     // Getters
+
+    public Image getProfilePic() {
+        return profilePic;
+    }
+
     public String getEmail() { return email; }
     public String getFirstname() {
         return firstname;

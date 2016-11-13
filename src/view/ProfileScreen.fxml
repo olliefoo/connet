@@ -4,11 +4,11 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
    <children>
       <Text layoutX="283.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" />
       <TextField id="fName" layoutX="101.0" layoutY="45.0" />
@@ -32,7 +32,9 @@
       <ComboBox id="day" layoutX="101.0" layoutY="227.0" prefHeight="25.0" prefWidth="65.0" promptText="Day" />
       <ComboBox id="month" layoutX="184.0" layoutY="228.0" prefHeight="25.0" prefWidth="83.0" promptText="Month" />
       <ComboBox id="year" layoutX="277.0" layoutY="228.0" prefHeight="25.0" prefWidth="83.0" promptText="Year" />
-      <Button id="confirm" layoutX="197.0" layoutY="331.0" mnemonicParsing="false" text="Confirm" fx:id="confirmButton" onAction="#handleConfirmPressed"/>
-      <Button id="cancel" layoutX="326.0" layoutY="331.0" mnemonicParsing="false" text="Cancel" fx:id="cancelButton" onAction="#handleCancelPressed"/>
+      <Button id="confirm" fx:id="confirmButton" layoutX="192.0" layoutY="531.0" mnemonicParsing="false" onAction="#handleConfirmPressed" text="Confirm" />
+      <Button id="cancel" fx:id="cancelButton" layoutX="321.0" layoutY="531.0" mnemonicParsing="false" onAction="#handleCancelPressed" text="Cancel" />
+      <ImageView fx:id="profilePic" fitHeight="150.0" fitWidth="200.0" layoutX="204.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="uploadButton" layoutX="245.0" layoutY="462.0" mnemonicParsing="false" text="Upload Picture" />
    </children>
 </AnchorPane>
