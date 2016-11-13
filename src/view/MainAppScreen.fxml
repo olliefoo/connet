@@ -10,8 +10,8 @@
    <children>
       <ListView layoutX="29.0" layoutY="53.0" prefHeight="269.0" prefWidth="537.0" fx:id="listView"/>
       <Text layoutX="259.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Convention List" />
-      <Button layoutX="53.0" layoutY="18.0" mnemonicParsing="false" text="Profile" fx:id="profileButton"/>
-      <Button layoutX="276.0" layoutY="340.0" mnemonicParsing="false" text="Select" fx:id="selectButton"/>
-      <Button layoutX="495.0" layoutY="10.0" mnemonicParsing="false" text="Logout" fx:id="logoutButton"/>
+      <Button layoutX="53.0" layoutY="18.0" mnemonicParsing="false" text="Profile" fx:id="profileButton" onAction="#handleProfilePressed"/>
+      <Button layoutX="276.0" layoutY="340.0" mnemonicParsing="false" text="Select" fx:id="selectButton" onAction="#handleSelectPressed"/>
+      <Button layoutX="495.0" layoutY="10.0" mnemonicParsing="false" text="Logout" fx:id="logoutButton" onAction="#handleLogOutPressed"/>
    </children>
 </AnchorPane>
