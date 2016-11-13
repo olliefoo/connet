@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PreferenceController">
+   <children>
+      <ToggleButton fx:id="p1" layoutX="43.0" layoutY="187.0" mnemonicParsing="false" text="pref1" />
+      <ToggleButton fx:id="p2" layoutX="161.0" layoutY="187.0" mnemonicParsing="false" text="pref2" />
+      <ToggleButton fx:id="p3" layoutX="289.0" layoutY="187.0" mnemonicParsing="false" text="pref3" />
+      <ToggleButton fx:id="p4" layoutX="43.0" layoutY="226.0" mnemonicParsing="false" text="pref4" />
+      <ToggleButton fx:id="p5" layoutX="156.0" layoutY="226.0" mnemonicParsing="false" text="pref5" />
+      <ToggleButton fx:id="p6" layoutX="284.0" layoutY="226.0" mnemonicParsing="false" text="pref6" />
+      <ToggleButton fx:id="p7" layoutX="43.0" layoutY="271.0" mnemonicParsing="false" text="pref7" />
+      <ToggleButton fx:id="p8" layoutX="154.0" layoutY="278.0" mnemonicParsing="false" text="pref8" />
+      <ToggleButton fx:id="p9" layoutX="282.0" layoutY="278.0" mnemonicParsing="false" text="pref9" />
+      <ToggleButton fx:id="p10" layoutX="39.0" layoutY="317.0" mnemonicParsing="false" text="pref10" />
+      <ToggleButton fx:id="p11" layoutX="149.0" layoutY="317.0" mnemonicParsing="false" text="pref11" />
+      <ToggleButton fx:id="p12" layoutX="277.0" layoutY="317.0" mnemonicParsing="false" text="pref12" />
+   </children>
+</AnchorPane>
