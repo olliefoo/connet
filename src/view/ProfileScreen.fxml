@@ -35,6 +35,6 @@
       <Button id="confirm" fx:id="confirmButton" layoutX="192.0" layoutY="531.0" mnemonicParsing="false" onAction="#handleConfirmPressed" text="Confirm" />
       <Button id="cancel" fx:id="cancelButton" layoutX="321.0" layoutY="531.0" mnemonicParsing="false" onAction="#handleCancelPressed" text="Cancel" />
       <ImageView fx:id="profilePic" fitHeight="150.0" fitWidth="200.0" layoutX="204.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="uploadButton" layoutX="245.0" layoutY="462.0" mnemonicParsing="false" text="Upload Picture" />
+      <Button fx:id="uploadButton" layoutX="245.0" layoutY="462.0" mnemonicParsing="false" text="Upload Picture" onAction="#handleUploadPressed" />
    </children>
 </AnchorPane>

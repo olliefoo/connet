@@ -5,9 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 
 /**
@@ -41,5 +44,17 @@ public class ProfileController {
         stage.setScene(new Scene(root));
         stage.show();
     }
+    @FXML
+    private void handleUploadPressed() throws IOException {
+        FileChooser fc = new FileChooser();
+        File selectedPic = fc.showOpenDialog(null);
+        String path = "";
+        if (selectedPic != null) {
+            path += selectedPic.getAbsolutePath();
+        } else {
+            System.out.println("File is not valid");
+        }
+        profilePic = new ImageView(new Image(getClass().getResourceAsStream(path), 200, 150, true ,true));
 
+    }
 }
