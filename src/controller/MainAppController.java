@@ -24,13 +24,13 @@ public class MainAppController {
     private Button logoutButton;
     @FXML
     private void handleSelectPressed() throws IOException {
-        if (isInputValid()) {
+        //if (isInputValid()) {
             Stage stage = (Stage) selectButton.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass()
                     .getResource("../view/MatchedScreen.fxml"));
             stage.setScene(new Scene(root));
             stage.show();
-        }
+        //}
     }
     @FXML
     private void handleLogOutPressed() throws IOException {

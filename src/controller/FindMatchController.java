@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
-import main.Database;
+//import main.Database;
 import main.Profile;
 import main.User;
 
@@ -34,15 +34,15 @@ public class FindMatchController {
     }
 
 
-    @FXML
+    /*@FXML
     private void displayMatch() {
         User matchedUser = findMatch();
         Profile matchedProfile = matchedUser.getProfile();
         nameField.setText(matchedProfile.getFirstname() + " " + matchedProfile.getLastname());
-        matchedImage.setImage(matchedProfile.getPicture());
-    }
+        matchedImage.setImage(matchedProfile.getProfilePic());
+    }*/
 
-    private User findMatch() {
+    /*private User findMatch() {
         // loop through all the users and check if they are in the same convention
         List<User> sameConvention = new ArrayList<>(10);
         for(User u : Database.getUsers()) {
@@ -69,6 +69,6 @@ public class FindMatchController {
         }
         user.setMatchedUser(matchedUser);
         return matchedUser;
-    }
+    }*/
 
 }
