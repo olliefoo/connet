@@ -14,6 +14,7 @@ public class User implements Serializable{
         private Profile profile;
         private String email;
         private Set preferences;
+        private User matchedUser;
 
         public User(String username, String password, String email) {
             this.username = username;
@@ -41,6 +42,14 @@ public class User implements Serializable{
 
         public int getConvention() {
             return convention;
+        }
+
+        public User getMatchedUser() {
+            return matchedUser;
+        }
+
+        public void setMatchedUser(User u) {
+            matchedUser = u;
         }
 
         public String getEmail() {

@@ -1,6 +1,8 @@
 package main;
 
+import java.awt.*;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * Created by cbbjs on 11/12/2016.
@@ -20,7 +22,8 @@ public class Profile implements Serializable{
     private String day;
     private String year;
     private boolean gender;
-    private Set<Preferences> preference;
+
+    private Image profilePic;
 
     // Setters
     public void setName(String fn, String ln) {
