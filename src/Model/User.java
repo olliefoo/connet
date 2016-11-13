@@ -1,8 +1,7 @@
-package main;
+package Model;
 
 import java.io.Serializable;
 import java.util.Set;
-import java.util.TreeSet;
 
 /**
  * Created by cbbjs on 11/12/2016.
@@ -20,10 +19,8 @@ public class User implements Serializable{
             this.username = username;
             this.password = password;
             profile = new Profile();
-            this.convention = convention;
             this.email = email;
             profile.setEmail(email);
-            preferences = new TreeSet<>();
         }
 
         public String getUsername() {

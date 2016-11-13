@@ -8,6 +8,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import Model.Database;
+import Model.User;
 
 
 import java.io.IOException;
@@ -23,7 +25,7 @@ public class LoginController {
     @FXML
     private Button loginButton;
     @FXML
-    private Button registerButton;
+    private Button cancelButton;
 
 
     private boolean isInputValid() {
@@ -32,15 +34,14 @@ public class LoginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
-        if (username == null || username.length() == 0) {
+
+        if (username == null || username.length() == 0
+                || !Database.containsUsername(username)) {
             errorMessage += "Username does not exist. Please register first.\n";
         }
         if (password == null || password.length() == 0) {
                 errorMessage += "Wrong password. Try again.\n";
         }
-
-
-        //no error message means success / good input
         if (errorMessage.length() == 0) {
             return true;
         } else {
@@ -57,24 +58,22 @@ public class LoginController {
     @FXML
     private void handleLoginPressed() throws IOException {
         if (isInputValid()) {
-            //User user = Database.getUser(usernameField.getText());
+            User user = Database.getUser(usernameField.getText());
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass()
                     .getResource("../view/MainAppScreen.fxml"));
-
             Stage stage = (Stage) loginButton.getScene().getWindow();
             Parent root = loader.load();
-
-            //loader.<MainAppController>getController().setUser(user);
+            loader.<MainAppController>getController().setUser(user);
             stage.setScene(new Scene(root));
             stage.show();
         }
     }
     @FXML
-    private void handleRegisterPressed() throws IOException {
-        Stage stage = (Stage) registerButton.getScene().getWindow();
+    private void handleCancelPressed() throws IOException {
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
         Parent root = FXMLLoader.load(getClass()
-                .getResource("../view/RegisterScreen.fxml"));
+                .getResource("../view/WelcomeScreen.fxml"));
         stage.setScene(new Scene(root));
         stage.show();
     }

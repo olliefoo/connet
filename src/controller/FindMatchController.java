@@ -1,17 +1,15 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
-//import main.Database;
-import main.Profile;
-import main.User;
+import Model.User;
+import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.io.IOException;
 
 /**
  * Created by Owner on 11/12/2016.
@@ -19,56 +17,34 @@ import java.util.TreeSet;
 public class FindMatchController {
 
     @FXML
-    TextField nameField;
+    private TextField conventionName;
 
     @FXML
-    Button findMatchButton;
+    private Button returnButton;
 
     @FXML
-    ImageView matchedImage;
+    private TextField matchedUser;
 
-    User user;
+    private User user;
+    private int reportIndex = 1;
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(User u) {
+        user = u;
+        conventionName.setText("Rocket Science");
+        matchedUser.setText("Bryan Kim");
     }
 
 
-    /*@FXML
-    private void displayMatch() {
-        User matchedUser = findMatch();
-        Profile matchedProfile = matchedUser.getProfile();
-        nameField.setText(matchedProfile.getFirstname() + " " + matchedProfile.getLastname());
-        matchedImage.setImage(matchedProfile.getProfilePic());
-    }*/
+    @FXML
+    private void handleReturnClicked() throws IOException{
+        Stage stage = (Stage) returnButton.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass()
+                .getResource("../view/MainAppScreen.fxml"));
+        Parent root = loader.load();
+        loader.<MainAppController>getController().setUser(user);
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
 
-    /*private User findMatch() {
-        // loop through all the users and check if they are in the same convention
-        List<User> sameConvention = new ArrayList<>(10);
-        for(User u : Database.getUsers()) {
-            if(user.getConvention() == u.getConvention()) {
-                sameConvention.add(u);
-            }
-        }
-        // now have to check each user's preference to see if match
-        Set userPreferences = user.getPreferences();
-        Set temp = userPreferences;
-        int min = 100;
-        User matchedUser = null;
-        for(User u : sameConvention) {
-            temp.removeAll(u.getPreferences());
-            // if is perfect match then return
-            if(temp.size() == 0) {
-                user.setMatchedUser(u);
-                return u;
-            } else if(temp.size() < min) {
-                min = temp.size();
-                matchedUser = u;
-            }
-            temp = userPreferences;
-        }
-        user.setMatchedUser(matchedUser);
-        return matchedUser;
-    }*/
 
 }

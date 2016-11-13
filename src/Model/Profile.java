@@ -1,15 +1,11 @@
-package main;
-
-
-import javafx.scene.image.Image;
+package Model;
 
 import java.io.Serializable;
-import java.util.Set;
 
 /**
- * Created by cbbjs on 11/12/2016.
+ * Created by Owner on 10/4/2016.
  */
-public class Profile implements Serializable{
+public class Profile implements Serializable {
 
     private String email;
     private String firstname;
@@ -24,8 +20,6 @@ public class Profile implements Serializable{
     private String day;
     private String year;
     private boolean gender;
-
-    private Image profilePic;
 
     // Setters
     public void setName(String fn, String ln) {
@@ -58,17 +52,7 @@ public class Profile implements Serializable{
         gender = g;
     }
 
-
-    public void setProfilePic(Image image) {
-        profilePic = image;
-    }
-
     // Getters
-
-    public Image getProfilePic() {
-        return profilePic;
-    }
-
     public String getEmail() { return email; }
     public String getFirstname() {
         return firstname;
@@ -96,5 +80,6 @@ public class Profile implements Serializable{
     public String getYear() { return year; }
     public String getDay() { return day; }
     public boolean getGender() { return gender; }
+
 
 }
